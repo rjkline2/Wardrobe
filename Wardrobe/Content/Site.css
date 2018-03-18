@@ -33,7 +33,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-       background-image: url('images/pexels-photo-271722.jpeg');
+    background-image: url('images/pexels-photo-271722.jpeg');
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -59,10 +59,11 @@ textarea {
 }
 .footer {
     font-family: 'Pompiere', cursive;
-    font-weight: 300 !important;
+    font-weight: bold !important;
     font-size: 30px;
     color: black!important;
     text-align: center;
+    
 }
 .clothespix {
     height: 100px;
