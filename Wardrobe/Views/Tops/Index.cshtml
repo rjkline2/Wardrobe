@@ -1,57 +1,33 @@
 ﻿@model IEnumerable<Wardrobe.Models.Top>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index of Tops";
 }
 
-<h2>Index</h2>
+<h2 class="leader">Index of Tops</h2>
 
-<p>
+<p class="btn btn-default">
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TopName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopPic)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopColor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Occasion.OccName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Season.SeasonName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopPic)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopColor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Occasion.OccName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Season.SeasonName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TopID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TopID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TopID })
-        </td>
-    </tr>
-}
-
-</table>
+<p></p>
+<div class="row clothescontainer">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4 ">
+            <div class="thumbnail reviewthumb">
+                <div class="caption">
+                    <p> @Html.DisplayNameFor(model => model.TopName):@Html.DisplayFor(modelItem => item.TopName)</p>
+                    <p>@Html.DisplayNameFor(model => model.TopColor):@Html.DisplayFor(modelItem => item.TopColor)</p>
+                    <p>@Html.DisplayNameFor(model => model.Occasion.OccName):@Html.DisplayFor(modelItem => item.Occasion.OccName)</p>
+                    <p>@Html.DisplayNameFor(model => model.Season.SeasonName): @Html.DisplayFor(modelItem => item.Season.SeasonName)</p>
+                    <p> <img class="clothespix" src="@Html.DisplayFor(modelItem => item.TopPic)"/></p>
+                    <p class="btn btn-default">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.TopID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.TopID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.TopID })
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+    </div>

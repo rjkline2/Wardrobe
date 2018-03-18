@@ -1,15 +1,14 @@
 ﻿@model Wardrobe.Models.Accessory
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details of Accessories";
 }
 
-<h2>Details</h2>
+<h2 class="leader">Details of Accessories</h2>
 
 <div>
-    <h4>Accessory</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal detailscontainer">
         <dt>
             @Html.DisplayNameFor(model => model.AccName)
         </dt>
@@ -19,11 +18,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AccPic)
+           
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AccPic)
+            <img class="clothespix" src="@Html.DisplayFor(model => model.AccPic)"/>
         </dd>
 
         <dt>
@@ -52,7 +51,7 @@
 
     </dl>
 </div>
-<p>
+<p class="btn btn-default">
     @Html.ActionLink("Edit", "Edit", new { id = Model.AccID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
