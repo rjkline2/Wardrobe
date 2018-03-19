@@ -11,7 +11,8 @@ namespace Wardrobe.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Accessory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,16 @@ namespace Wardrobe.Models
         {
             this.Outfits = new HashSet<Outfit>();
         }
-    
+        
         public int AccID { get; set; }
+        [Display(Name = "Accessory Name")]
         public string AccName { get; set; }
         public string AccPic { get; set; }
+        [Display(Name = "Accessory Color")]
         public string AccColor { get; set; }
+        [Display(Name = "Season")]
         public int SeasID { get; set; }
+        [Display(Name = "Occasion")]
         public int OccID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
